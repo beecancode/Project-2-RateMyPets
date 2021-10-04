@@ -1,3 +1,5 @@
+var indexRoutes = require('./routes/index');
+
 var express = require('express');
 var path = require('path');
 var logger = require('morgan');
@@ -6,7 +8,8 @@ var cookieParser = require('cookie-parser');
 var session = require('express-session');
 var passport = require('passport');
 var methodOverride = require('method-override');
-
+//const petsRouter = require('./routes/pets');
+const indexRouter = require('./routes/index');
 // load the env vars
 require('dotenv').config();
 
@@ -23,6 +26,11 @@ require('./config/passport');
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
+
+
+app.use('/index', indexRouter);
+//app.use('/pets', petsRouter);
+
 
 app.use(methodOverride('_method'));
 app.use(express.static(path.join(__dirname, 'public')));
