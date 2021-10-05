@@ -18,3 +18,46 @@
 .collection-item form {
   margin-top: -5px;
 }
+
+/* Google */
+
+#google {
+  width: 20px;
+}
+
+/* Heading */
+
+main h1 {
+  transform: translatex(196px) translatey(100px);
+  text-align: center;
+  position: relative;
+  left: -200px;
+  color: blue;
+}
+
+/* Th */
+
+#list tr th {
+  text-align: center;
+  margin-right: 834px;
+  height: 18px;
+  transform: translatex(0px) translatey(0px);
+  padding-left: 48px;
+}
+
+/* Main */
+
+main {
+  text-align: center;
+  transform: translatex(196px) translatey(100px);
+}
+
+main h1{
+  margin-bottom:139px;
+ }
+
+/* Navigation */
+
+nav {
+  text-align: center;
+}

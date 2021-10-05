@@ -9,7 +9,7 @@ const commentSchema = new mongoose.Schema({
 const petSchema = new mongoose.Schema({
     name: String,
     species: String,
-    age: Number,
+    age: String,
     comments: [commentSchema],
     petOwner: { type: mongoose.Schema.Types.ObjectId, ref: 'User' }
 });

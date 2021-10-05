@@ -11,9 +11,9 @@
   <tbody>
     <% pets.forEach(function(m) { %>
       <tr>
-        <td><%= p.name %></td>
-        <td><%= p.img %></td>
-        <td><%= p.species %></td>
+        <td><%= pets.name %></td>
+        <td><%= pets.img %></td>
+        <td><%= pets.species %></td>
         <td><a href="/pets/<%= m._id %>">PROFILE</a></td>
       </tr>
       <% }); %>
