@@ -10,6 +10,7 @@ const petSchema = new mongoose.Schema({
     name: String,
     species: String,
     age: String,
+    description: String,
     comments: [commentSchema],
     petOwner: { type: mongoose.Schema.Types.ObjectId, ref: 'User' }
 });

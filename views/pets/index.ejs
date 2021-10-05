@@ -3,20 +3,19 @@
   <thead>
     <tr>
       <th>Name</th>
-      <th></th>
+      
       <th>Species</th>
-      <th></th>
+      
     </tr>
   </thead>
   <tbody>
-    <% pets.forEach(function(m) { %>
+    <% pets.forEach(p => { %>
       <tr>
-        <td><%= pets.name %></td>
-        <td><%= pets.img %></td>
-        <td><%= pets.species %></td>
-        <td><a href="/pets/<%= m._id %>">PROFILE</a></td>
+        <td><%= p.name %></td>
+        <td><%= p.species %></td>
+        <td><a href="/pets/<%= p._id %>">Profile</a></td>
       </tr>
-      <% }); %>
+      <% }) %>
     </tbody>
   </table>
   

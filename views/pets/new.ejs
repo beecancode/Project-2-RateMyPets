@@ -2,7 +2,7 @@
 
 <form action="/pets" method="POST">
     <label for="img">Select image:</label>
-      <input type="file" id="img" name="img" accept="image/*" onchange="loadFile(event)" style="display: none;">
+      <input type="file" id="img" name="img" accept="image/*" onchange="loadFile(event)">
       <img id="output" width="200" />
     <label>Name:
       <input type="text" name="name">
@@ -22,7 +22,7 @@
       </select>
     </label><br>
     <label>Description:
-      <input type="text" name="cast">
+      <input type="text" name="description">
     </label><br>
     <input type="submit" value="Add Pet">
   </form>

@@ -20,7 +20,7 @@ async function deleteComment(req, res) {
 
 function create(req, res) {
   // Find the pet to embed the comment within
-  pet.findById(req.params.id, function(err, pet) {
+  Pet.findById(req.params.id, function(err, pet) {
     req.body.user = req.user._id;
     req.body.userName = req.user.name;
     req.body.userAvatar = req.user.avatar;
