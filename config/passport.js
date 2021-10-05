@@ -4,53 +4,44 @@ const User = require('../models/user');
 //Require your User Model here!
 
 // configuring Passport!
-passport.use(new GoogleStrategy({
-    clientID: process.env.GOOGLE_CLIENT_ID,
-    clientSecret: process.env.GOOGLE_SECRET,
-    callbackURL: process.env.GOOGLE_CALLBACK
-  },
-  function(accessToken, refreshToken, profile, cb) {
-    // a user has logged in via OAuth!
-    // refer to the lesson plan from earlier today in order to set this up
-    console.log(profile, "PROFILE")
-
-    User.findOne({'googleId': profile.id}, function (err, userDoc) {
-      if (err) return cb(err); // if there is an error use the callback to proceed to the next line in middleware
-    
-      if (userDoc) {
-        // if the user exists
-    
-        return cb(null, userDoc); // send the user doc to the next a middleware function in passport
-        // cb is verify callback that will pass  our information to passport.serializeUser at the bottom of the file
-        // cb(error, SuccessWhichIsYourUserDocument)
-      } else {
-        // Create the user in the db
-        const newUser = new User({
-          name: profile.displayName,
-          email: profile.emails[0].value,
-          googleId: profile.id,
+passport.use(
+  new GoogleStrategy(
+    // Configuration object
+    {
+      clientID: process.env.GOOGLE_CLIENT_ID,
+      clientSecret: process.env.GOOGLE_SECRET,
+      callbackURL: process.env.GOOGLE_CALLBACK
+    },
+    // The verify callback function
+    function(accessToken, refreshToken, profile, cb) {
+      // a user has logged in with OAuth...
+      User.findOne({googleId: profile.id})
+        .then(async function(user) {
+          if (user) return cb(null, user);
+          // We have a brand new user via OAuth
+          try {
+            user = await User.create({
+              name: profile.displayName,
+              googleId: profile.id,
+              email: profile.emails[0].value,
+              avatar: profile.photos[0].value
+            });
+            return cb(null, user);
+          } catch (err) {
+            return cb(err);
+          }
         });
-    
-        newUser.save(function (err) {
-          if (err) return cb(err);
-          return cb(null, newUser); // success, pass that student doc to the next place in the middleware chain,p
-        });
-      };
-    });
-  }
-));
+    }
+  )
+);
 
 passport.serializeUser(function(user, done) {
   done(null, user._id);
 });
 
-passport.deserializeUser(function(id, done) {
+passport.deserializeUser(async function(userId, cb) {
   const user = await User.findById(userId);
-  done(null, user);
-  // Find your User, using your model, and then call done(err, whateverYourUserIsCalled)
-  // When you call this done function passport assigns the user document to req.user, which will 
-  // be availible in every Single controller function, so you always know the logged in user
-
+  cb(null, user);
 });
 
 

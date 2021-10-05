@@ -1,38 +1,30 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add your Pet!</title>
-</head>
-<body>
-    <h2>Add your Pet!</h2>
+<%- include('../partials/header') %>
+
 <form action="/pets" method="POST">
-  <label for="img">Select image:</label>
-    <input type="file" id="img" name="img" accept="image/*" onchange="loadFile(event)" style="display: none;">
-    <img id="output" width="200" />
-  <label>Name:
-    <input type="text" name="name">
-  </label><br>
-  <label>Age:
-    <input type="number" name="age">
-  </label><br>
-  <label>Species:
-    <select name="species">
-      <option value="dog">Dog</option>
-      <option value="cat">Cat</option>
-      <option value="bird">Bird</option>
-      <option value="small animal">Small Animal</option>
-      <option value="reptile">Reptile</option>
-      <option value="horse">Horse</option>
-      <option value="other">Other</option>
-    </select>
-  </label><br>
-  <label>Description:
-    <input type="text" name="cast">
-  </label><br>
-  <input type="submit" value="Add Pet">
-</form>
-</body>
-</html>
+    <label for="img">Select image:</label>
+      <input type="file" id="img" name="img" accept="image/*" onchange="loadFile(event)" style="display: none;">
+      <img id="output" width="200" />
+    <label>Name:
+      <input type="text" name="name">
+    </label><br>
+    <label>Age:
+      <input type="number" name="age">
+    </label><br>
+    <label>Species:
+      <select name="species">
+        <option value="dog">Dog</option>
+        <option value="cat">Cat</option>
+        <option value="bird">Bird</option>
+        <option value="small animal">Small Animal</option>
+        <option value="reptile">Reptile</option>
+        <option value="horse">Horse</option>
+        <option value="other">Other</option>
+      </select>
+    </label><br>
+    <label>Description:
+      <input type="text" name="cast">
+    </label><br>
+    <input type="submit" value="Add Pet">
+  </form>
+
+<%- include('../partials/footer') %>

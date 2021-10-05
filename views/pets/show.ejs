@@ -1,0 +1,75 @@
+<%- include('../partials/header') %>
+
+<section id="show-page">
+  <div>Name: </div>
+  <div><%= pet.name %></div>
+  <div>Owned By: </div>
+  <div><%= pet.petOwner %></div>
+  <div><%= pet.img %></div>
+  <div>Age: </div>
+  <div><%= pet.age %></div>
+  <div>Species: </div>
+  <div><%= pet.species %></div>
+  <div>Description: </div>
+  <div><%= pet.description %></div>
+  
+</section>
+
+<br><br>
+<h2>My Pet's Ratings</h2>
+<% if (user) { %>
+  <form id="add-comment-form" method="POST" action="/pets/<%= pet._id %>/comments">
+    <label>Comment:</label>
+    <textarea name="content"></textarea>
+    <label>Rating:</label>
+    <select name="rating">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+    </select>
+    <input type="submit" value="Add comment">
+  </form>
+<% } %>
+<% if (pet.comments.length) { %>
+  <table>
+    <thead>
+      <tr>
+        <th>User</th>
+        <th>Date</th>
+        <th>Comment</th>
+        <th>Rating</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% let total = 0 %>
+      <% pet.comments.forEach(function(r) { %>
+        <% total += r.rating %>
+        <tr>
+          <td class="comment-user"><img src="<%= r.userAvatar %>"><%= r.userName %></td>
+          <td><%= r.createdAt.toLocaleDateString() %></td>
+          <td><%= r.content %></td>
+          <td><%= r.rating %></td>
+          <td>
+            <% if (user && user._id.equals(r.user)) { %>
+              <form action="/comments/<%= r._id %>?_method=DELETE" method="POST">
+                <button type="submit">X</button>
+              </form>
+            <% } %>
+          </td>
+        </tr>
+      <% }); %>
+      <tr>
+        <td colspan="3"></td>
+        <td><strong><%= (total / pet.comments.length).toFixed(1) %></strong></td>
+      </tr>
+    </tbody>
+  </table>
+<% } else { %>
+  <h5>No Comments Yet :(</h5>
+<% } %>
+
+
+<%- include('../partials/footer') %>
