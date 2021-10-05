@@ -41,13 +41,12 @@ passport.use(new GoogleStrategy({
 ));
 
 passport.serializeUser(function(user, done) {
-  done(null, user.id);
+  done(null, user._id);
 });
 
 passport.deserializeUser(function(id, done) {
-  User.findById(id, function (err, userDoc){
-    done(err, userDoc);
-  });
+  const user = await User.findById(userId);
+  done(null, user);
   // Find your User, using your model, and then call done(err, whateverYourUserIsCalled)
   // When you call this done function passport assigns the user document to req.user, which will 
   // be availible in every Single controller function, so you always know the logged in user
