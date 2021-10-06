@@ -37,6 +37,7 @@ function create(req, res) {
   for (let key in req.body) {
     if (req.body[key] === '') delete req.body[key];
   }
+  req.body.petOwner = req.user._id
   const pet = new Pet(req.body);
   pet.save(function (err) {
     if (err) return res.redirect('/pets/new');
