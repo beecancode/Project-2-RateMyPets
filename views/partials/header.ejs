@@ -9,12 +9,16 @@
 </head>
 <body>
   <nav>
-    <a href="/pets" <%- title === 'Rate My Pets!' ? 'class="active"' : '' %>>Rate My Pets!</a>
+    <button onclick="location.href='/pets'" type="button"<%- title === 'Rate My Pets!' ? 'class="active"' : '' %>>Home Page</button>
+    <!-- <a href="/pets" <%- title === 'Rate My Pets!' ? 'class="active"' : '' %>>Rate My Pets!</a> -->
     <% if (user) { %>
-      <a href="/pets/new" <%- title === 'Add Pet' ? 'class="active"' : '' %>>ADD PET</a>
-      <a href="/logout">LOG OUT</a>
+      <button onclick="location.href='/pets/new'" type="button"<%- title === 'Add Pet' ? 'class="active"' : '' %>>Add a Pet</button>
+      <!-- <a href="/pets/new" <%- title === 'Add Pet' ? 'class="active"' : '' %>>ADD PET</a> -->
+      <!-- <a href="/logout">LOG OUT</a> -->
+      <button onclick="location.href='/logout'" type="button" >LOG OUT</button>
     <% } else { %>
-      <a href="/auth/google" class="login">LOG IN&nbsp;<img id="google" src="https://i.imgur.com/FHjYyi0.png"></a>
+      <button onclick="location.href='/auth/google'" type="button" class="login" >LOG IN&nbsp;<img id="google" src="https://i.imgur.com/FHjYyi0.png"></button>
+      <!-- <a href="/auth/google" class="login">LOG IN&nbsp;<img id="google" src="https://i.imgur.com/FHjYyi0.png"></a> -->
     <% } %>
   </nav>
   <main>

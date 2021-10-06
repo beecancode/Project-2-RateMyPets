@@ -5,7 +5,8 @@ module.exports = {
   index,
   show,
   new: newPet,
-  create
+  create,
+  edit
 };
 
 function index(req, res) {
@@ -34,13 +35,22 @@ function newPet(req, res) {
 
 function create(req, res) {
   // ensure empty inputs are removed so that model's default values will work
+  const pet = new Pet(req.body);
   for (let key in req.body) {
     if (req.body[key] === '') delete req.body[key];
   }
-  req.body.petOwner = req.user._id
-  const pet = new Pet(req.body);
+  pet.user = req.user._id
+  
   pet.save(function (err) {
     if (err) return res.redirect('/pets/new');
     res.redirect(`/pets/${pet._id}`);
+  });
+}
+
+function edit(req, res) {
+  Pet.findById(req.params.id, function(err, pet) {
+    // Verify pet is "owned" by logged in user
+    if (!pet.user.equals(req.user._id)) return res.redirect('/pets');
+    res.render('pets/edit', {pet});
   });
 }

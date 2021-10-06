@@ -3,7 +3,9 @@ const mongoose = require('mongoose');
 const commentSchema = new mongoose.Schema({
     content: String,
     rating: String, 
-    userId: { type: mongoose.Schema.Types.ObjectId, ref: 'User' }
+    userId: { type: mongoose.Schema.Types.ObjectId, ref: 'User' }, 
+},{
+ timestamps: true
 });
 
 const petSchema = new mongoose.Schema({
