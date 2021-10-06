@@ -10,7 +10,7 @@ module.exports = {
 
 function index(req, res) {
   Pet.find({}, function (err, pets) {
-    res.render('pets/index', { title: 'All pets', pets });
+    res.render('pets/index', { title: 'Rate My Pets!', pets });
   });
 }
 

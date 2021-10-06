@@ -1,22 +1,22 @@
 <%- include('../partials/header') %>
 
 <section id="show-page">
-  <div>Name: <%= pet.name %> </div>
-  <div>Owned By: <%= pet.petOwner %> </div>
+  <img src="/images/<%= pet.name %>.jpg" />
+  <div><b>Name: </b><%= pet.name %> </div>
+  <div><b>Owned By: </b> <%= pet.petOwner %> </div>
   <div><%= pet.img %></div>
-  <div>Age: <%= pet.age %> </div>
-  <div>Species: <%= pet.species %> </div>
-  <div>Description: </div>
+  <div><b>Age: </b><%= pet.age %> </div>
+  <div><b>Species: </b><%= pet.species %> </div>
+  <div><b>Description: </b></div>
   <div><%= pet.description %></div>
   
 </section>
 
 <br><br>
-<h2>My Pet's Ratings</h2>
+<h2><%= pet.name %>'s Ratings</h2>
 <% if (user) { %>
   <form id="add-comment-form" method="POST" action="/pets/<%= pet._id %>/comments">
-    <label>Comment:</label>
-    <textarea name="content"></textarea>
+    
     <label>Rating:</label>
     <select name="rating">
       <option value="1">1</option>
@@ -25,6 +25,8 @@
       <option value="4">4</option>
       <option value="5">5</option>
     </select>
+    <label>Comment:</label>
+    <textarea name="content"></textarea>
     <input type="submit" value="Add comment">
   </form>
 <% } %>

@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Nanum+Pen+Script&family=Sigmar+One&display=swap');
+
+
+
 .brand-logo {
   margin-left: 15px;
 }
@@ -10,54 +14,99 @@
   padding-top: 20px;
 }
 
-.student-name {
-  position: relative;
-  top: -5px;
-}
-
 .collection-item form {
   margin-top: -5px;
 }
 
-/* Google */
 
+
+body {
+  background: linear-gradient(-93deg, #40e0d0 0%, #ff8c00 52%, #ff0080 100%);
+  text-align: center;
+  transform:translatex(0px) translatey(0px);
+  font-family: 'Nanum Pen Script', cursive;
+}
+
+
+main{
+  transform:translatex(0px) translatey(0px);
+ }
+
+/* Heading */
+main h1{
+  transform:translatex(0px) translatey(0px);
+  font-size: 80px;
+  color: white;
+ }
+
+/* Google */ 
 #google {
   width: 20px;
 }
-
-/* Heading */
-
-main h1 {
-  transform: translatex(196px) translatey(100px);
-  text-align: center;
-  position: relative;
-  left: -200px;
-  color: blue;
-}
-
-/* Th */
-
-#list tr th {
-  text-align: center;
-  margin-right: 834px;
-  height: 18px;
-  transform: translatex(0px) translatey(0px);
-  padding-left: 48px;
-}
-
-/* Main */
-
-main {
-  text-align: center;
-  transform: translatex(196px) translatey(100px);
-}
-
-main h1{
-  margin-bottom:139px;
- }
 
 /* Navigation */
 
 nav {
   text-align: center;
 }
+.hideScrollbar::-webkit-scrollbar{
+    width: 0;  /* Remove scrollbar space */
+    background: transparent;  /* Optional: just make scrollbar invisible */
+ }
+
+.hideScrollbar::-webkit-scrollbar-thumb{
+  background: red;
+  
+}
+
+#list {
+  overflow-x:auto;
+  border-color:#000000;
+ border-style:solid;
+ display:inline-block;
+ transform:translatex(0px) translatey(0px) !important;
+ max-width:1190px;
+ overflow:auto;
+ background-color:#2ecc71;
+ position:relative;
+ border-top-left-radius:50px;
+ border-top-right-radius:50px;
+ border-bottom-left-radius:50px;
+ border-bottom-right-radius:50px;
+}
+
+#list tbody{
+  position:relative;
+  right:201px;
+  bottom:-25px;
+  transform:translatex(0px) translatey(0px);
+ }
+
+#list tr img{
+  width:237px;
+ }
+
+ /* Table Data */
+#list tr td{
+  position:relative;
+  padding-right:20px;
+  top:-25px;
+  left:226px;
+ }
+
+ #show-page img{
+  width:331px;
+  border-top-left-radius:50px;
+  border-top-right-radius:50px;
+  border-bottom-left-radius:50px;
+  border-bottom-right-radius:50px;
+ }
+
+ #show-page {
+   font-size: 24px;
+ }
+
+ .attribute {
+   font-style: bold;
+   font-size: 26px;
+ }
