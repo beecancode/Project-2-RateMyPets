@@ -55,7 +55,7 @@
               <form action="/comments/<%= r._id %>?_method=DELETE" method="POST">
                 <button type="submit">DELETE</button>
               </form>
-              <a href="/pets/<%= r._id %>/edit">
+              <a href="/comments/<%= r._id %>/edit">
                 <button type="button"<%- title === 'Edit' ? 'class="active"' : '' %>>Edit</button>
               </a>
             <% } %>

@@ -6,6 +6,7 @@ module.exports = {
   show,
   new: newPet,
   create
+  
 };
 
 function index(req, res) {

@@ -6,6 +6,7 @@ module.exports = {
   delete: deleteComment,
   update: updateComment,
   edit: editComment
+  
 };
 
 async function deleteComment(req, res) {
@@ -50,8 +51,10 @@ function updateComment(req, res) {
 }
 
 function editComment(req, res) {
-  console.log(req.body, "<--editComment");
-  res.render('pets/edit', {
-    pet: Pet.findOne(req.params.id)
-  });
+  console.log(req.params.id, "<-- is something");
+  Pet.findOne({'comments._id': req.params.id}, function(err, pet) {
+    console.log(err,pet, "error")
+    const comment = pet.comments.id(req.params.id)
+    res.render("pets/edit", {comment, pet})
+  })
 };

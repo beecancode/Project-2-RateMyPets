@@ -7,4 +7,6 @@ router.get('/', petsCtrl.index);
 router.get('/new', isLoggedIn, petsCtrl.new);
 router.get('/:id', petsCtrl.show);
 router.post('/', isLoggedIn, petsCtrl.create);
+
+
 module.exports = router;

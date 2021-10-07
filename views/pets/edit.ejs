@@ -1,9 +1,10 @@
 
 
-
+<%= pet._id %> 
 <h2>Edit Your Rating of <%= pet.name %> </h2>
 
-<form action="/pets/comments/<%= pet._id %>?_method=PUT" method="POST">
+<%  %> 
+<form action="/comments/<%= comment._id %>?_method=PUT" method="POST">
     <!-- Value attribute is being set to the comment's current text -->
     <label>Rating:</label>
       <select name="rating">
@@ -14,11 +15,9 @@
         <option value="5">5</option>
       </select>
       <label>Comment:</label>
-      <textarea name="content"></textarea>
+      <textarea name="content" value="" ><%= comment.content %></textarea>
       <input type="submit" value="Edit Rating">
   </form>
-  
-
 
 
 
