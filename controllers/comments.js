@@ -4,7 +4,8 @@ const Pet = require('../models/pet');
 module.exports = {
   create,
   delete: deleteComment,
-  update: updateComment
+  update: updateComment,
+  edit: editComment
 };
 
 async function deleteComment(req, res) {
@@ -36,13 +37,21 @@ function create(req, res) {
 }
 
 function updateComment(req, res) {
-  
+  console.log(req.body, "<--- updateComment");
    Pet.findOne({'comments._id': req.params.id}, function(err, pet) {
      const commentSubdoc = pet.comments.id(req.params.id);
      if (!commentSubdoc.userId.equals(req.user._id)) return res.redirect(`/pets/${pet._id}`);
      commentSubdoc.content = req.body.content;
+     commentSubdoc.rating = req.body.rating;
     pet.save(function(err) {
        res.redirect(`/pets/${pet._id}`);
      });
    });
 }
+
+function editComment(req, res) {
+  console.log(req.body, "<--editComment");
+  res.render('pets/edit', {
+    pet: Pet.findOne(req.params.id)
+  });
+};

@@ -55,11 +55,9 @@
               <form action="/comments/<%= r._id %>?_method=DELETE" method="POST">
                 <button type="submit">DELETE</button>
               </form>
-              <form action="/comments/<%= r._id %>?_method=PUT" method="POST">
-                <!-- Value attribute is being set to the comment's current text -->
-                <input name="content" value="<%= r.content %>">
-                <input type="submit" value="Update Comment">
-              </form>
+              <a href="/pets/<%= r._id %>/edit">
+                <button type="button"<%- title === 'Edit' ? 'class="active"' : '' %>>Edit</button>
+              </a>
             <% } %>
           </td>
         </tr>
