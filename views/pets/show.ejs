@@ -53,10 +53,10 @@
           <td>
             <% if (user && user._id.equals(r.userId)) { %>
               <form action="/comments/<%= r._id %>?_method=DELETE" method="POST">
-                <button type="submit">DELETE</button>
+                <button id="delete" type="submit">DELETE</button>
               </form>
               <a href="/comments/<%= r._id %>/edit">
-                <button type="button"<%- title === 'Edit' ? 'class="active"' : '' %>>Edit</button>
+                <button id="edit" type="button"<%- title === 'Edit' ? 'class="active"' : '' %>>Edit</button>
               </a>
             <% } %>
           </td>

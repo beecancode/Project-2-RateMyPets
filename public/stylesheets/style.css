@@ -215,19 +215,83 @@ nav {
   font-family: 'Nanum Pen Script', cursive;
 }
 
+#editButton {
+  border-top-left-radius:50px;
+  border-top-right-radius:50px;
+  border-bottom-left-radius:50px;
+  border-bottom-right-radius:50px;
+  height:62px;
+  font-size:45px;
+  margin-top:26px;
+  background: linear-gradient(-93deg, #40e0d0 0%, #ff8c00 52%, #ff0080 100%);
+  color: white;
+  font-family: 'Nanum Pen Script', cursive;
+}
+
  /* Form Division */
 main form{
   font-size:52px;
   transform:translatex(0px) translatey(0px);
  }
  
- /* Input */
+/* Delete */
+#delete{
+  transform:translatex(-77px) translatey(26px);
+ }
+ 
+ /* Edit */
+ #edit{
+  transform:translatex(3px) translatey(-37px);
+ }
+ 
+
+/* Table */
+main table{
+  width:1392px;
+  transform:translatex(264px) translatey(18px);
+ }
+ 
+ /* Body Of Table */
+ main table tbody{
+  font-size:34px;
+ }
+ 
+ /* Th */
+ main tr th{
+  font-size:32px;
+ }
  
  
  /* Select */
  main form select{
   height:45px;
   font-size:30px;
+  font-family: 'Nanum Pen Script', cursive;
+ }
+
+ h2{
+  font-size:52px;
+ }
+ 
+ /* Label */
+ form label{
+  font-size:44px;
+ }
+ 
+ /* Select */
+ form select{
+  width:47px;
+  height:53px;
+  font-size:24px;
+  transform:translatex(0px) translatey(-6px);
+ }
+ 
+ /* Text Area */
+ form textarea{
+  width:385px;
+  height:53px;
+  transform:translatex(-5px) translatey(13px);
+  font-size: 24px;
   font-family: 'Nanum Pen Script', cursive;
  }
  
