@@ -3,7 +3,8 @@ const Pet = require('../models/pet');
 
 module.exports = {
   create,
-  delete: deleteComment
+  delete: deleteComment,
+  update: updateComment
 };
 
 async function deleteComment(req, res) {
@@ -32,4 +33,16 @@ function create(req, res) {
       res.redirect(`/pets/${pet._id}`);
     });
   });
+}
+
+function updateComment(req, res) {
+  
+   Pet.findOne({'comments._id': req.params.id}, function(err, pet) {
+     const commentSubdoc = pet.comments.id(req.params.id);
+     if (!commentSubdoc.userId.equals(req.user._id)) return res.redirect(`/pets/${pet._id}`);
+     commentSubdoc.content = req.body.content;
+    pet.save(function(err) {
+       res.redirect(`/pets/${pet._id}`);
+     });
+   });
 }

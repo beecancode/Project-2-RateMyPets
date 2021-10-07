@@ -9,11 +9,6 @@
   <div><b>Species: </b><%= pet.species %> </div>
   <div><b>Description: </b></div>
   <div><%= pet.description %></div>
-  <% if (user) { %>
-    <form action="/comments/<%= r._id %>?_method=DELETE" method="PUT">
-      <button type="submit">Edit Pet</button>
-    </form>
-  <% } %> 
 
 </section>
 
@@ -59,6 +54,11 @@
             <% if (user && user._id.equals(r.userId)) { %>
               <form action="/comments/<%= r._id %>?_method=DELETE" method="POST">
                 <button type="submit">DELETE</button>
+              </form>
+              <form action="/comments/<%= r._id %>?_method=PUT" method="POST">
+                <!-- Value attribute is being set to the comment's current text -->
+                <input name="content" value="<%= r.content %>">
+                <input type="submit" value="Update Comment">
               </form>
             <% } %>
           </td>

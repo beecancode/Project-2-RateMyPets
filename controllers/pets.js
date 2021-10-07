@@ -5,8 +5,7 @@ module.exports = {
   index,
   show,
   new: newPet,
-  create,
-  edit
+  create
 };
 
 function index(req, res) {
@@ -47,10 +46,3 @@ function create(req, res) {
   });
 }
 
-function edit(req, res) {
-  Pet.findById(req.params.id, function(err, pet) {
-    // Verify pet is "owned" by logged in user
-    if (!pet.user.equals(req.user._id)) return res.redirect('/pets');
-    res.render('pets/edit', {pet});
-  });
-}
