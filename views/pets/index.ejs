@@ -1,17 +1,19 @@
 <%- include('../partials/header') %>
-<h2>Click on a pet below</h2>
-<table class='hideScrollbar' id="list">
-  <thead>
-  </thead>
-  <tbody>
-    <% pets.forEach(p => { %>
-      <tc>
-        <!-- <td><%= p.name %></td> -->
-        <!-- <td><img src="/images/<%= p.name %>.jpg" /></td> -->
-        <td><a href="/pets/<%= p._id %>"><img src="/images/<%= p.name %>.jpg" /></a></td>
-      </tc>
-      <% }) %>
+  <h2>Click on a pet below</h2>
+  <table class='hideScrollbar' id="list">
+    <thead>
+    </thead>
+    <tbody>
+      <% pets.forEach(p=> { %>
+        <tc>
+          <% if (user) { %>
+            <td><a href="/pets/<%= p._id %>"><img src="/images/<%= p.name %>.jpg" /></a></td>
+            <% } else { %>
+              <td><img src="/images/<%= p.name %>.jpg" /></td>
+                <% } %>
+              <% }) %> 
+        </tc>
     </tbody>
   </table>
-  
+
 <%- include('../partials/footer') %>

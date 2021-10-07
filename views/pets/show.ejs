@@ -9,7 +9,12 @@
   <div><b>Species: </b><%= pet.species %> </div>
   <div><b>Description: </b></div>
   <div><%= pet.description %></div>
-  
+  <% if (user) { %>
+    <form action="/comments/<%= r._id %>?_method=DELETE" method="PUT">
+      <button type="submit">Edit Pet</button>
+    </form>
+  <% } %> 
+
 </section>
 
 <br><br>

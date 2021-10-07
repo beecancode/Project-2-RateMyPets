@@ -7,5 +7,5 @@ router.get('/', petsCtrl.index);
 router.get('/new', isLoggedIn, petsCtrl.new);
 router.get('/:id', petsCtrl.show);
 router.post('/', isLoggedIn, petsCtrl.create);
-
+router.get('/:id/edit', isLoggedIn, petsCtrl.edit)
 module.exports = router;
