@@ -17,9 +17,9 @@ HTML, CSS, JavaScript, Node.js, Mongo DB,Google API, Oauth, and Mongoose. Hosted
 Launch my Website! : https://ratemypets.herokuapp.com/
 
 ## Next Steps
-  *Allow users to edit pet's they have added
-  *Allow users to upload an image from their computer when adding a pet
-  *Restrict rating pets to users other than the pet profile creator
+  * Allow users to edit pet's they have added
+  * Allow users to upload an image from their computer when adding a pet
+  * Restrict rating pets to users other than the pet profile creator
   
 ## Project Planning
 My Trello Board: https://trello.com/b/qC14VuSM/ratemypets
