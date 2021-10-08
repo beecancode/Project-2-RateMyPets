@@ -246,12 +246,12 @@ main form{
  
 /* Delete */
 #delete{
-  transform:translatex(-77px) translatey(26px);
+  transform:translatex(-5px) translatey(21px);
  }
  
  /* Edit */
  #edit{
-  transform:translatex(3px) translatey(-37px);
+  transform:translatex(74px) translatey(-40px);
  }
  
 
