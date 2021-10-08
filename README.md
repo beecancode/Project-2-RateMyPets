@@ -12,10 +12,15 @@ Rate my Pets is an app where users can add a profile for their favorite pets, an
 ## Technologies used in this project
 HTML, CSS, JavaScript, Node.js, Mongo DB,Google API, Oauth, and Mongoose. Hosted using Heroku.
 
-## Launch my website!
+## Getting Started
 
-Website Link: https://ratemypets.herokuapp.com/
+Launch my Website! : https://ratemypets.herokuapp.com/
 
+## Next Steps
+  *Allow users to edit pet's they have added
+  *Allow users to upload an image from their computer when adding a pet
+  *Restrict rating pets to users other than the pet profile creator
+  
 ## Project Planning
 My Trello Board: https://trello.com/b/qC14VuSM/ratemypets
 
