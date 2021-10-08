@@ -3,7 +3,6 @@
 <section id="show-page">
   <img src="/images/<%= pet.name %>.jpg" />
   <div><b>Name: </b><%= pet.name %> </div>
-  <div><b>Owned By: </b> <%= user.name %> </div>
   <div><%= pet.img %></div>
   <div><b>Age: </b><%= pet.age %> </div>
   <div><b>Species: </b><%= pet.species %> </div>
@@ -16,7 +15,6 @@
 <h2><%= pet.name %>'s Ratings</h2>
 <% if (user) { %>
   <form id="add-comment-form" method="POST" action="/pets/<%= pet._id %>/comments">
-    
     <label>Rating:</label>
     <select name="rating">
       <option value="1">1</option>
@@ -31,7 +29,7 @@
   </form>
 <% } %>
 <% if (pet.comments.length) { %>
-  <table>
+  <table class="center">
     <thead>
       <tr>
         <th>User</th>
@@ -46,7 +44,7 @@
       <% pet.comments.forEach(function(r) { %>
         <% total += r.rating %>
         <tr>
-          <td class="comment-user"><img src="<%= r.userAvatar %>"><%= user.name %></td>
+          <td class="comment-user"><%= r.userName %></td>
           <td><%= r.createdAt.toLocaleDateString() %></td>
           <td><%= r.content %></td>
           <td><%= r.rating %>/5</td>

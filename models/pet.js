@@ -2,7 +2,8 @@ const mongoose = require('mongoose');
 
 const commentSchema = new mongoose.Schema({
     content: String,
-    rating: String, 
+    rating: String,
+    userName: String, 
     userId: { type: mongoose.Schema.Types.ObjectId, ref: 'User' }, 
 },{
  timestamps: true

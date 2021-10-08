@@ -145,16 +145,20 @@ nav {
    font-size: 26px;
  }
 
+ .center{
+  margin-left: auto;
+  margin-right: auto;
+  transform:translatex(0px) translatey(0px);
+  margin-top:39px;
+ }
+
  main table{
-  /* margin-right:1520px; */
-  transform:translatex(79px) translatey(18px);
   border-style:dotted;
   border-color:rgb(55, 153, 146);
   border-top-left-radius:30px;
   border-top-right-radius:30px;
   border-bottom-left-radius:30px;
   border-bottom-right-radius:30px;
-  margin-bottom: 80px;
   font-size: 50px;
   width:1680px;
  }
@@ -214,6 +218,12 @@ nav {
   color: white;
   font-family: 'Nanum Pen Script', cursive;
 }
+
+#userName{
+  width:193px !important;
+  height:39px !important;
+  transform:translatex(0px) translatey(-15px) !important;
+ }
 
 #editButton {
   border-top-left-radius:50px;

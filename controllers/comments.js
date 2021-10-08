@@ -29,7 +29,7 @@ function create(req, res) {
     req.body.userName = req.user.name;
     // Push the subdoc for the comment
     pet.comments.push(req.body);
-    console.log(pet);
+    
     // Always save the top-level document (not subdocs)
     pet.save(function(err) {
       res.redirect(`/pets/${pet._id}`);
