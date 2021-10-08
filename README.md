@@ -20,6 +20,8 @@ Launch my Website! : https://ratemypets.herokuapp.com/
   * Allow users to edit pet's they have added
   * Allow users to upload an image from their computer when adding a pet
   * Restrict rating pets to users other than the pet profile creator
+  * convert to mobile app
+  * Add mini games
   
 ## Project Planning
 My Trello Board: https://trello.com/b/qC14VuSM/ratemypets
