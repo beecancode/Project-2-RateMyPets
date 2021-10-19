@@ -11,6 +11,7 @@ const commentSchema = new mongoose.Schema({
 
 const petSchema = new mongoose.Schema({
     name: String,
+    petImg: String,
     species: String,
     age: String,
     description: String,

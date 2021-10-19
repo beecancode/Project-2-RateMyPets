@@ -11,9 +11,9 @@
               <% pets.forEach(p=> { %>
                 <tc>
                   <% if (user) { %>
-                    <td><a href="/pets/<%= p._id %>"><img src="/images/<%= p.name %>.jpg" /></a></td>
+                    <td><a href="/pets/<%= p._id %>"><img src="<%= p.petImg %>" /></a></td>
                     <% } else { %>
-                      <td><img src="/images/<%= p.name %>.jpg" /></td>
+                      <td><img src="<%= p.petImg %>" /></td>
                       <% } %>
                         <% }) %>
                 </tc>
