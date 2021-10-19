@@ -1,26 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel='stylesheet' href='/stylesheets/style.css' />
-  <title><%= title %></title>
+  <title>
+    <%= title %>
+  </title>
 </head>
+
 <body>
   <nav>
-    <button onclick="location.href='/pets'" type="button"<%- title === 'Rate My Pets!' ? 'class="active"' : '' %>>Home Page</button>
-    <!-- <a href="/pets" <%- title === 'Rate My Pets!' ? 'class="active"' : '' %>>Rate My Pets!</a> -->
+    <a href="/pets"><button type="button" <%- title==='Rate My Pets!' ? 'class="active"' : '' %>>Home Page</button></a>
+
     <% if (user) { %>
-      <button onclick="location.href='/pets/new'" type="button"<%- title === 'Add Pet' ? 'class="active"' : '' %>>Add a Pet</button>
-      <!-- <a href="/pets/new" <%- title === 'Add Pet' ? 'class="active"' : '' %>>ADD PET</a> -->
-      <!-- <a href="/logout">LOG OUT</a> -->
-      <button onclick="location.href='/logout'" type="button" >LOG OUT</button>
-    <% } else { %>
-      <button onclick="location.href='/auth/google'" type="button" class="login" >LOG IN&nbsp;<img id="google" src="https://i.imgur.com/FHjYyi0.png"></button>
-      <!-- <a href="/auth/google" class="login">LOG IN&nbsp;<img id="google" src="https://i.imgur.com/FHjYyi0.png"></a> -->
-    <% } %>
+      <a href="/pets/new"><button type="button" <%- title==='Add Pet' ? 'class="active"' : '' %>>Add a
+          Pet</button></a>
+
+
+      <a href="/logout"><button type="button">LOG OUT</button></a>
+      <% } else { %>
+        <a href="/auth/google"><button type="button" class="login">LOG IN&nbsp;<img id="google"
+              src="https://i.imgur.com/FHjYyi0.png"></button></a>
+
+        <% } %>
   </nav>
   <main>
-    <h1><%= title %></h1>
-
+    <h1>
+      <%= title %>
+    </h1>
